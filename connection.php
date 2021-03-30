@@ -16,7 +16,7 @@ function openConnection($db){
     if ($db == 'users') {
         $sql = "CREATE TABLE $db (
     username VARCHAR(30) NOT NULL PRIMARY KEY,
-    password VARCHAR(30) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     uuid VARCHAR(36) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
