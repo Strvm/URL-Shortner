@@ -25,6 +25,7 @@
 	 - Use with key: https://shortner.fr/?key=?key
 	 - Use with the v.php file: https://shortner.fr/v.php?key=key
  - Actions on shortened links:
+	 - Clicking on a shortened link field will copy it to your clipboard.
 	 - Activate/Deactivate: With this action button you can decide if your shortened link should work or not. If inactive, the link will redirect to a 404.
 	 - Delete: Permanently choose to delete a link.
   
