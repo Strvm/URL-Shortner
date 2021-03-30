@@ -24,6 +24,10 @@
 	 - Use the given link: https://shortner.fr/key
 	 - Use with key: https://shortner.fr/?key=?key
 	 - Use with the v.php file: https://shortner.fr/v.php?key=key
+ - Actions on shortened links:
+	 - Activate/Deactivate: With this action button you can decide if your shortened link should work or not. If inactive, the link will redirect to a 404.
+	 - Delete: Permanently choose to delete a link.
+  
 
 **Login Page**
 ![Login Page](https://i.imgur.com/30oRWXp.png)
