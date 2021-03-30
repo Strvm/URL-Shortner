@@ -74,30 +74,25 @@
                 echo "<tr class='linkContainer'>
                         <td>
                             <i class='fa fa-info-circle info-box' style='font-size:20px;'>
-                              <span class='info-box-text'>Link created: ".$row['reg_date']." </span>
+                              <span class='info-box-text'>Link created: " . $row['reg_date'] . " </span>
                             </i>
                         </td>
                         <td>
-                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
-                                <input type='text' class='linkUrl $class' name='linkUrl' id='linkUrl' size='25' value=".$url .$row['link_key']." readonly>
-                            </form>
+                            <form action='' method='post' method='post' action='shortner.php'>
+                                <input type='text' class='linkUrl $class' name='linkUrl' id='linkUrl' size='25' value=" . $url . $row['link_key'] . " readonly>
                         </td>
                         <td>
-                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
-                                <input type='text' class='$class' size='60' name='uses' value=".$row['link']." readonly>
-                            </form>
+                            <input type='text' class='$class' size='60' name='uses' value=" . $row['link'] . " readonly>
                         </td>
                         <td>
-                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
-                                <input type='text' class='uses $class' size='3' name='uses' value=".$row['uses']." readonly required>
-                            </form>
+                            <input type='text' class='uses $class' size='3' name='uses' value=" . $row['uses'] . " readonly required>
                         </td>
                         <td>
-                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
-                                <input type='submit' class='activeButton $class' value='$active' name='activate'>
-                                <input type='submit' class='deleteButton' value='Delete' name='delete'>
-                            </form>
+                            <input type='submit' class='activeButton $class' value='$active' name='activate'>
+                            <input type='submit' class='deleteButton' value='Delete' name='delete'>
                         </td>
+                            </form>
+
                       </tr>";
         //        foreach ($row as $r){
         //            echo $r;
