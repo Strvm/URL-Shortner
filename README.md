@@ -1,5 +1,5 @@
 # URL-Shortner!
-#### So short that even the word has been *Shortened*!
+#### So short that even the name has been *Shortened*!
 (Note): You can visit le site live here: https://shortner.fr/
 
 ## What is it?
