@@ -28,7 +28,7 @@
     </div>
 </header>
 <div class="createContainer">
-    <h1 data-aos="fade-down">Shorten you URL's !</h1>
+    <h1 data-aos="fade-down">Shorten your URLs !</h1>
     <form action="" method="post" class="linkForm" action="shortner.php" data-aos="fade-right">
         <label class="invalidUrl" for="link">Invalid URL</label>
             <input type="text" size='96' name="link" id="link" class="linkInput" placeholder="Enter your URL" data-aos="zoom-in" required>
@@ -41,58 +41,77 @@
         You can also set to Activate/De-activate your links or delete them.</p>
     </div>
 </div>
-<div class="linksContainer">
-<div class="infoNames">
-    <div class="infoShort">Shortned URL</div>
-    <div class="infoSource">Source</div>
-    <div class="infoUses">Uses</div>
-</div>
-<?php
-    require_once "shortner.php";
-    require_once "connection.php";
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
-    global $linkConn;
-    $result = getAllUserLinks($_SESSION["uuid"], $linkConn);
-$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$url = $protocol .$_SERVER['HTTP_HOST'] ."/";
-    while ($row = mysqli_fetch_array($result)) { // <-- overwritten here with item 2
-        $active = 'Inactive';
-        $class = '';
-        if ($row['active']){
-            $active = 'Active';
-        }else{
-            $class = 'inactiveLink';
-        }
-        echo "<div class='linkContainer'>
-                <div class='link'>
-                <form action='' method='post' method='post' action='shortner.php?key=Test'>
-                    <i class='fa fa-info-circle info-box' style='font-size:20px;'>
-                      <span class='info-box-text'>Link created: ".$row['reg_date']." </span>
-                    </i>
-                    <input type='text' class='linkUrl $class' name='linkUrl' id='linkUrl' size='25' value=".$url .$row['link_key']." readonly>
-                    <input type='text' class='$class' size='60' name='uses' value=".$row['link']." readonly>
-                    <input type='text' class='uses $class' size='3' name='uses' value=".$row['uses']." readonly required>
-                    <input type='submit' class='activeButton $class' value='$active' name='activate'>
-                    <input type='submit' class='deleteButton' value='Delete' name='delete'>
-                </form>
-                </div>
-              </div>";
-//        foreach ($row as $r){
-//            echo $r;
-//            echo "</br> ";
-//        }
-    }
-//    foreach (getAllUserLinks($_SESSION["uuid"], $linkConn) as $link){
-//        echo $link;
-//        echo "</br> ";
-//    }
+<table class="linksContainer">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Shortned URL</th>
+            <th>Source</th>
+            <th>Uses</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+            require_once "shortner.php";
+            require_once "connection.php";
+            if(!isset($_SESSION))
+            {
+                session_start();
+            }
+            global $linkConn;
+            $result = getAllUserLinks($_SESSION["uuid"], $linkConn);
+        $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = $protocol .$_SERVER['HTTP_HOST'] ."/";
+            while ($row = mysqli_fetch_array($result)) { // <-- overwritten here with item 2
+                $active = 'Inactive';
+                $class = '';
+                if ($row['active']){
+                    $active = 'Active';
+                }else{
+                    $class = 'inactiveLink';
+                }
+                echo "<tr class='linkContainer'>
+                        <td>
+                            <i class='fa fa-info-circle info-box' style='font-size:20px;'>
+                              <span class='info-box-text'>Link created: ".$row['reg_date']." </span>
+                            </i>
+                        </td>
+                        <td>
+                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
+                                <input type='text' class='linkUrl $class' name='linkUrl' id='linkUrl' size='25' value=".$url .$row['link_key']." readonly>
+                            </form>
+                        </td>
+                        <td>
+                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
+                                <input type='text' class='$class' size='60' name='uses' value=".$row['link']." readonly>
+                            </form>
+                        </td>
+                        <td>
+                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
+                                <input type='text' class='uses $class' size='3' name='uses' value=".$row['uses']." readonly required>
+                            </form>
+                        </td>
+                        <td>
+                            <form action='' method='post' method='post' action='shortner.php?key=Test'>
+                                <input type='submit' class='activeButton $class' value='$active' name='activate'>
+                                <input type='submit' class='deleteButton' value='Delete' name='delete'>
+                            </form>
+                        </td>
+                      </tr>";
+        //        foreach ($row as $r){
+        //            echo $r;
+        //            echo "</br> ";
+        //        }
+            }
+        //    foreach (getAllUserLinks($_SESSION["uuid"], $linkConn) as $link){
+        //        echo $link;
+        //        echo "</br> ";
+        //    }
 
-?>
-
-</div>
+        ?>
+    </tbody>
+</table>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>

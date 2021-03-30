@@ -9,12 +9,7 @@ body{
 }
 
 .linkContainer{
-    margin-bottom: 20px;
-}
-.link{
-    position: relative;
-    display: inline;
-    margin: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -99,26 +94,7 @@ form{
 }
 
 .linksContainer{
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-}
-
-.infoNames{
-    width: 54%;
-    display: inline-flex;
-}
-
-.infoNames div{
-    margin-bottom: 5px;
-}
-
-.infoShort{
-    margin-right: 250px;
-}
-
-.infoSource{
-    margin-right: 200px;
+    margin: 0 auto;
 }
 
 .createContainer{
