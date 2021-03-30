@@ -12,10 +12,12 @@ function checkIfUserExits($username, $connection){
 
 function loginUser($username, $password, $connection){
     // echo "SELECT username FROM users.Users WHERE username LIKE '".$username."' AND password='".$password."'";
-    $query = $connection->query("SELECT * FROM users.Users WHERE username LIKE '".$username."' AND password= BINARY '".$password."'");
+    $query = $connection->query("SELECT * FROM users.Users WHERE username LIKE '".$username."'");
     //Content
     $infos = mysqli_fetch_array($query);
-
+    if (!password_verify($password, $infos["password"])){
+        return false;
+    }
 
     $_SESSION["username"] = $infos["username"];
     $_SESSION["uuid"] = $infos["uuid"];
@@ -47,8 +49,8 @@ function addUser($username, $password, $connection){
     }elseif (!isPasswordValid($password)){
         return "Your password is not valid, it must be at least 6 characters long, can only contain letters, numbers and these special characters '_ ! @ # $ % *'.";
     }
-
-    $sql = ("INSERT INTO users.Users (username, password, uuid) VALUES ('".$username."', '".$password."', UUID())");
+    $hashedPw = password_hash($password, PASSWORD_DEFAULT);
+    $sql = ("INSERT INTO users.Users (username, password, uuid) VALUES ('".$username."', '".$hashedPw."', UUID())");
 
     $connection->query($sql);
     $_SESSION["username"] = $username;
