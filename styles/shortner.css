@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F4FBFF;
+}
+
+*{
+    font-family: "Montserrat";
+}
+
+.linkContainer{
+    margin-bottom: 20px;
+}
+.link{
+    position: relative;
+    display: inline;
+    margin: 20px;
+}
+
+
+.info-box {
+    position: relative;
+    display: inline-block;
+}
+
+.info-box .info-box-text {
+    visibility: hidden;
+    width: 130px;
+    background-color: #4EA8DE;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    padding: 5px;
+    position: absolute;
+    z-index: 100;
+}
+
+.info-box:hover .info-box-text {
+    visibility: visible;
+    position: absolute;
+    left: -140px;
+    top: -20px;
+}
+
+.fa{
+    color: #4EA8DE;
+}
+
+.activeButton{
+    user-select: none;
+    border-radius: 50px;
+    background-color: #64DFDF;
+    padding: 5px 15px;
+    color: white;
+}
+
+.deleteButton{
+    background-color: #B00000;
+    user-select: none;
+    border-radius: 50px;
+    padding: 5px 15px;
+    color: white;
+}
+
+input{
+    height: 25px;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    border: none;
+}
+
+.url{
+    width: 200px;
+}
+
+.uses{
+    text-align: center;
+}
+
+form{
+    display: inline;
+}
+
+.linkUrl{
+    transition: background-color 100ms linear;
+}
+
+.linkInput{
+    box-shadow: 3px 10px 24px -12px rgba(0,0,0,0.75);
+}
+
+
+
+.inactiveLink{
+    background-color: #CFCFCF;
+}
+
+.linksContainer{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.infoNames{
+    width: 54%;
+    display: inline-flex;
+}
+
+.infoNames div{
+    margin-bottom: 5px;
+}
+
+.infoShort{
+    margin-right: 250px;
+}
+
+.infoSource{
+    margin-right: 200px;
+}
+
+.createContainer{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 80px 0px;
+}
+
+header{
+    position: relative;
+    height: 70px;
+    width: 100%;
+    border-color: #F4FBFF;
+    border-bottom: 1px solid;
+    float: right;
+}
+
+.menu{
+    width: 80px;
+    position: absolute;
+    right: 5%;
+    top: 15%;
+    text-align: center;
+}
+
+.username{
+    margin: 5px 0px;
+    padding: 0;
+}
+
+.infoText{
+    margin: 0 auto;
+    width: 50vw;
+}
+
+.invalidUrl{
+    display: none;
+    color: red;
+}
+
+input[type="submit"]{
+    transition: background-color 100ms linear;
+}
+
+input[type="submit"].inactiveLink{
+    font-size: 11px;
+}
+
+input:focus{
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    color: white;
+    background-color: #4EA8DE;
+    transition: background-color 100ms linear;
+}
+
+.urlSubmit{
+    height: 32px;
+    box-shadow: 3px 10px 24px -12px rgba(0,0,0,0.75);
+}

@@ -1,0 +1,96 @@
+body{
+    background: rgb(78,168,222);
+    background: linear-gradient(180deg, rgba(78,168,222,1) 0%, rgba(86,207,225,1) 100%) no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-family: "Montserrat";
+}
+
+.inputForm{
+    background-color: #F2F2F2;
+    height: 40px;
+    width: 180px;
+    font-size: 1.2rem !important;
+    border-color: #eee;
+    border-width: 1px;
+    margin-bottom: 20px;
+}
+
+
+.inputSubmit{
+    border-width: 0px;
+    border-radius: 50px;
+    color: white;
+    background-color: #4EA8DE;
+    padding: 10px 30px;
+    transition: background-color 300ms, color 300ms linear;
+    margin: 0;
+    box-shadow: 3px 10px 11px -12px rgba(0,0,0,0.75);
+
+}
+
+.inputSubmit:hover{
+    background-color: #ecf0f1;
+    color: #4EA8DE;
+    transition: background-color 300ms, color 300ms linear;
+}
+
+.formsContainer{
+    background-color: white;
+    border-radius: 50px;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    box-shadow: 3px 10px 24px -12px rgba(0,0,0,0.75);
+
+}
+
+.createContainer{
+    display: none;
+}
+
+.loginContainer{
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formOption{
+    display: -webkit-box;
+
+}
+
+.container{
+    width: 27vw;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+}
+.option{
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    user-select: none;
+    background-color: transparent;
+    transition: background-color 100ms linear;
+}
+
+.optionSelected{
+    color: #414141;
+    background-color: #EFEDED;
+    transition: background-color 300ms linear;
+}
+
+
