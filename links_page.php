@@ -13,15 +13,6 @@
 
 <header>
     <div class="menu">
-<!--        --><?php
-//            session_start();
-//            //If user isn't logged in, redirect them to login page.
-//            if($_SESSION['username']==NULL){
-//                header("Location: /index.php");
-//            }
-//            $username = $_SESSION['username'];
-//            echo "<h5 class='username'>".$username."</h5>";
-//        ?>
         <a href="/account_page.php">
             <i class="fa fa-user-circle-o" style="font-size:24px"></i>
         </a>
@@ -97,15 +88,6 @@
                             </form>
 
                       </tr>";
-        //        foreach ($row as $r){
-        //            echo $r;
-        //            echo "</br> ";
-        //        }
-            }
-        //    foreach (getAllUserLinks($_SESSION["uuid"], $linkConn) as $link){
-        //        echo $link;
-        //        echo "</br> ";
-        //    }
 
         ?>
     </tbody>
@@ -122,11 +104,3 @@
 
 </body>
 </html>
-
-
-
-
-
-<?php
-
-?>
