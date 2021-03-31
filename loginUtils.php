@@ -39,7 +39,22 @@ function logoutUser(){
     session_destroy();
 }
 
+function updateUsername($uuid, $conn, $username){
+    $sql = ("UPDATE users.Users SET username='".$username."' WHERE uuid='" . $uuid . "'");
+    if ($conn->query($sql) === FALSE) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    $_SESSION['username'] = $username;
 
+}
+
+function updatePassword($uuid, $password, $conn){
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
+    $sql = ("UPDATE users.Users SET password='".$hashed."' WHERE uuid='" . $uuid . "'");
+    if ($conn->query($sql) === FALSE) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
 
 function addUser($username, $password, $connection){
     if (checkIfUserExits($username, $connection)){

@@ -13,15 +13,18 @@
 
 <header>
     <div class="menu">
-        <?php
-            session_start();
-            //If user isn't logged in, redirect them to login page.
-            if($_SESSION['username']==NULL){
-                header("Location: /index.php");
-            }
-            $username = $_SESSION['username'];
-            echo "<h5 class='username'>".$username."</h5>";
-        ?>
+<!--        --><?php
+//            session_start();
+//            //If user isn't logged in, redirect them to login page.
+//            if($_SESSION['username']==NULL){
+//                header("Location: /index.php");
+//            }
+//            $username = $_SESSION['username'];
+//            echo "<h5 class='username'>".$username."</h5>";
+//        ?>
+        <a href="/account_page.php">
+            <i class="fa fa-user-circle-o" style="font-size:24px"></i>
+        </a>
         <form action="loginUtils.php" method="post">
             <input type="submit" class="linkSubmit" name="disconnect" value="Disconnect" />
         </form>
