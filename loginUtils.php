@@ -11,7 +11,6 @@ function checkIfUserExits($username, $connection){
 }
 
 function loginUser($username, $password, $connection){
-    // echo "SELECT username FROM users.Users WHERE username LIKE '".$username."' AND password='".$password."'";
     $query = $connection->query("SELECT * FROM users.Users WHERE username LIKE '".$username."'");
     //Content
     $infos = mysqli_fetch_array($query);
