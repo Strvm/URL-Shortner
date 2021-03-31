@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<body>
 <?php
 require_once "shortner.php";
-
-
-
-
-//echo $url;
-
 
 if(isset($_GET["key"])) {
     global $linkConn;
@@ -52,6 +43,3 @@ if (strlen($key) > 0) {
 }
 
 ?>
-
-</body>
-</html>
