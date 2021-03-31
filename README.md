@@ -24,10 +24,15 @@
 	 - Use the given link: https://shortner.fr/key
 	 - Use with key: https://shortner.fr/?key=?key
 	 - Use with the v.php file: https://shortner.fr/v.php?key=key
+ - Update Account Info:
+	 - You can change your username.
+	 - You can change your password.
+	 - You can see when your account was created.
  - Actions on shortened links:
 	 - Clicking on a shortened link field will copy it to your clipboard.
 	 - Activate/Deactivate: With this action button you can decide if your shortened link should work or not. If inactive, the link will redirect to a 404.
 	 - Delete: Permanently choose to delete a link.
+	 - Hovering the info icon ('i') will show a tooltip of when the link was created.
   
 
 **Login Page**
